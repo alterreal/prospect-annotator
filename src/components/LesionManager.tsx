@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LabelData, Lesion, Sector } from '../types';
+import { LabelData, Lesion } from '../types';
 import SectorSelector from './SectorSelector';
 import './LesionManager.css';
 
