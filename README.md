@@ -44,6 +44,19 @@ Generate a production build:
 npm run build
 ```
 
+## Deployment
+
+This app is configured for automatic deployment to GitHub Pages. After pushing to the `main` or `master` branch, GitHub Actions will automatically build and deploy the app.
+
+### Setting up GitHub Pages
+
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under **Source**, select **GitHub Actions**
+4. The app will be available at: `https://YOUR_USERNAME.github.io/prospect-annotator/`
+
+The deployment workflow will run automatically on every push to the main branch.
+
 ## Usage
 
 1. Click **Load Report** to choose a `.txt` radiology report (displayed on the left pane).
@@ -61,11 +74,11 @@ The exported JSON follows this structure:
 
 ```json
 {
+  "psa": 6.5,
+  "prostate_volume": 45.2,
   "epe": true,
   "svi": false,
   "enlarged_lymph_nodes": false,
-  "prostate_volume": 45.2,
-  "psa": 6.5,
   "main_findings": "Description of findings...",
   "lesions": [
     {
