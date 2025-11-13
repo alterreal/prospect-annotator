@@ -44,18 +44,10 @@ Generate a production build:
 npm run build
 ```
 
-## Deployment
+## GitHub Pages
 
-This app is configured for automatic deployment to GitHub Pages. After pushing to the `main` or `master` branch, GitHub Actions will automatically build and deploy the app.
+The app is also available at: `https://alterreal.github.io/prospect-annotator/`
 
-### Setting up GitHub Pages
-
-1. Go to your repository on GitHub
-2. Navigate to **Settings** → **Pages**
-3. Under **Source**, select **GitHub Actions**
-4. The app will be available at: `https://YOUR_USERNAME.github.io/prospect-annotator/`
-
-The deployment workflow will run automatically on every push to the main branch.
 
 ## Usage
 
