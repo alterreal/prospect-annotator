@@ -32,6 +32,28 @@ const LabelingForm: React.FC<LabelingFormProps> = ({ labelData, setLabelData }) 
           <h3>Clinical Findings</h3>
           
           <div className="form-group">
+            <label>PSA Levels (ng/mL)</label>
+            <input
+              type="number"
+              step="0.1"
+              value={labelData.psa ?? ''}
+              onChange={(e) => handleNumberChange('psa', e.target.value)}
+              placeholder="Enter PSA level"
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Prostate Volume (cc)</label>
+            <input
+              type="number"
+              step="0.1"
+              value={labelData.prostate_volume ?? ''}
+              onChange={(e) => handleNumberChange('prostate_volume', e.target.value)}
+              placeholder="Enter volume"
+            />
+          </div>
+
+          <div className="form-group">
             <label>Extracapsular Extension (EPE)</label>
             <div className="binary-buttons">
               <button
@@ -101,28 +123,6 @@ const LabelingForm: React.FC<LabelingFormProps> = ({ labelData, setLabelData }) 
                 Clear
               </button>
             </div>
-          </div>
-
-          <div className="form-group">
-            <label>Prostate Volume (cc)</label>
-            <input
-              type="number"
-              step="0.1"
-              value={labelData.prostate_volume ?? ''}
-              onChange={(e) => handleNumberChange('prostate_volume', e.target.value)}
-              placeholder="Enter volume"
-            />
-          </div>
-
-          <div className="form-group">
-            <label>PSA Levels (ng/mL)</label>
-            <input
-              type="number"
-              step="0.1"
-              value={labelData.psa ?? ''}
-              onChange={(e) => handleNumberChange('psa', e.target.value)}
-              placeholder="Enter PSA level"
-            />
           </div>
 
           <div className="form-group">

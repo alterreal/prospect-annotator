@@ -1,34 +1,32 @@
-# Prospect Annotator
+# PROSPECT Annotator
 
 A web application for labeling MRI prostate radiology reports with structured, standardized information.
 
 ## Features
 
-- **Report Loading**: Load and display .txt files containing radiology reports
-- **Structured Labeling**: Label reports with standardized fields including:
-  - Extracapsular extension (EPE) - Yes/No
-  - Seminal vesicle invasion (SVI) - Yes/No
-  - Enlarged lymph nodes - Yes/No
-  - Prostate volume (cc) - Numeric
-  - PSA levels (ng/mL) - Numeric
-  - Main findings - Text
-- **Lesion Management**: Add and manage multiple lesions with:
-  - PI-RADS score (1-5)
+- **Report Loading**: Load and display .txt files containing radiology reports.
+- **Structured Labeling**: Capture standardized clinical fields such as:
+  - PSA levels (ng/mL) — Numeric
+  - Prostate volume (cc) — Numeric
+  - Extracapsular extension (EPE) — Yes/No
+  - Seminal vesicle invasion (SVI) — Yes/No
+  - Enlarged lymph nodes — Yes/No
+  - Main findings — Free text
+- **Lesion Management**: Add, select, and remove multiple lesions with:
+  - PI-RADS score (1–5)
   - Lesion volume (cc)
-  - Sector locations according to PI-RADS v2.1 prostate sector map
-- **Sector Selection**: Select prostate sectors using PI-RADS v2.1 classification:
-  - Region: Apex (A), Mid (M), Base (B)
-  - Side: Left (l), Right (r)
-  - Zone: Transition (TZ), Peripheral (PZ), Central (CZ), Anterior Fibromuscular Stroma (AS)
-  - Section (for TZ and PZ only): anterior (a), posterior medial (pm), posterior lateral (pl), posterior (p)
-- **JSON Export**: Save labels in JSON format matching the expected schema
+  - Sector locations according to the PI-RADS v2.1 prostate sector map
+- **Sector Labelling Modes**: Choose how to annotate lesion sectors:
+  - **Image Mode (default)** — click directly on the PI-RADS map to toggle sectors.
+  - **Dropdown Mode** — select Region, Side, Zone, and Section via form inputs.
+- **JSON Export**: Save the completed label set in a JSON structure.
 
 ## Installation
 
-1. Install dependencies:
-```bash
-npm install
-```
+1. Clone the repository and install dependencies:
+   ```bash
+   npm install
+   ```
 
 ## Development
 
@@ -37,29 +35,25 @@ Start the development server:
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
+The application will be available at `http://localhost:5173`.
 
 ## Build
 
-Build for production:
+Generate a production build:
 ```bash
 npm run build
 ```
 
 ## Usage
 
-1. Click "Load Report" to load a .txt file containing a radiology report
-2. The report content will be displayed on the left side
-3. Fill in the labeling fields on the right side:
-   - Use Yes/No buttons for binary fields
-   - Enter numeric values for volume and PSA
-   - Add text for main findings
-4. To add lesions:
-   - Click "Add Lesion"
-   - Select the lesion to configure it
-   - Enter PI-RADS score and volume
-   - Add sectors using the sector selector form
-5. Click "Save Labels" to export the labels as a JSON file
+1. Click **Load Report** to choose a `.txt` radiology report (displayed on the left pane).
+2. Review the report and fill in the clinical fields on the right pane.
+3. Click **Add Lesion** to create a lesion entry, then select it to edit sector information.
+4. Choose the **Labelling Mode**:
+   - In **Image** mode, click sectors on the PI-RADS map. Selected areas are highlighted in red, and the legend below the map explains the abbreviations.
+   - In **Dropdown** mode, use the Region, Side, Zone, and Section selectors and click **Add Sector**.
+5. Review the **Selected Sectors** list. Remove any sectors if needed by clicking the × button.
+6. When finished, click **Save Labels** to download the JSON file.
 
 ## JSON Output Format
 

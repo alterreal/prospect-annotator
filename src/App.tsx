@@ -20,11 +20,11 @@ function App() {
   const handleSave = () => {
     // Transform data to match expected JSON format - always include all fields
     const exportData: any = {
+      psa: labelData.psa ?? null,
+      prostate_volume: labelData.prostate_volume ?? null,
       epe: labelData.epe === 'yes' ? true : labelData.epe === 'no' ? false : null,
       svi: labelData.svi === 'yes' ? true : labelData.svi === 'no' ? false : null,
       enlarged_lymph_nodes: labelData.enlarged_lymph_nodes === 'yes' ? true : labelData.enlarged_lymph_nodes === 'no' ? false : null,
-      prostate_volume: labelData.prostate_volume ?? null,
-      psa: labelData.psa ?? null,
       main_findings: labelData.main_findings ?? null,
       lesions: labelData.lesions.map(lesion => ({
         id: lesion.id,
