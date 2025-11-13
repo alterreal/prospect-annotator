@@ -195,7 +195,7 @@ const PIRADSMap: React.FC<PIRADSMapProps> = ({ selectedSectors, onSectorClick })
   const renderMapWithOverlay = (region: ValidRegion) => {
     const sectors = getSectorsForRegion(region);
     const size = imageSizes[region];
-    const imagePath = `/pirads-map-${region}.png`;
+    const imagePath = `${import.meta.env.BASE_URL}pirads-map-${region}.png`;
 
     return (
       <div key={region} className="map-view-container">
