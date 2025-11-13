@@ -46,7 +46,7 @@ npm run build
 
 ## GitHub Pages
 
-The app is also available at: `https://alterreal.github.io/prospect-annotator/`
+The app is also available [here](https://alterreal.github.io/prospect-annotator/)
 
 
 ## Usage
