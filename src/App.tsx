@@ -15,6 +15,10 @@ function App() {
   const handleFileLoad = (text: string, filename: string) => {
     setReportText(text);
     setReportFilename(filename);
+    // Reset annotations when a new file is loaded
+    setLabelData({
+      lesions: []
+    });
   };
 
   const handleSave = () => {
