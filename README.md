@@ -8,13 +8,15 @@ A web application for labeling MRI prostate radiology reports with structured, s
 - **Structured Labeling**: Capture standardized clinical fields such as:
   - PSA levels (ng/mL) — Numeric
   - Prostate volume (cc) — Numeric
-  - Extracapsular extension (EPE) — Yes/No
-  - Seminal vesicle invasion (SVI) — Yes/No
-  - Enlarged lymph nodes — Yes/No
-  - Main findings — Free text
+  - Extracapsular extension (EPE) — Yes/No/N/A
+  - Seminal vesicle invasion (SVI) — Yes/No/N/A
+  - Enlarged lymph nodes — Yes/No/N/A
+  - Neurovascular Bundle Involvement — Yes/No/N/A
+  - Bladder Neck Involvement — Yes/No/N/A
+  - Rectal Wall Involvement — Yes/No/N/A
 - **Lesion Management**: Add, select, and remove multiple lesions with:
   - PI-RADS score (1–5)
-  - Lesion volume (cc)
+  - Maximum Diameter (mm)
   - Sector locations according to the PI-RADS v2.1 prostate sector map
 - **Sector Labelling Modes**: Choose how to annotate lesion sectors:
   - **Image Mode (default)** — click directly on the PI-RADS map to toggle sectors.
@@ -71,12 +73,14 @@ The exported JSON follows this structure:
   "epe": true,
   "svi": false,
   "enlarged_lymph_nodes": false,
-  "main_findings": "Description of findings...",
+  "neurovascular_bundle_involvement": null,
+  "bladder_neck_involvement": null,
+  "rectal_wall_involvement": null,
   "lesions": [
     {
       "id": 1,
       "pirads": 4,
-      "volume": 2.3,
+      "maximum_diameter": 15.5,
       "sectors": [
         {
           "region": "base",

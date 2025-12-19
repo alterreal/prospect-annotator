@@ -25,11 +25,13 @@ function App() {
       epe: labelData.epe === 'yes' ? true : labelData.epe === 'no' ? false : null,
       svi: labelData.svi === 'yes' ? true : labelData.svi === 'no' ? false : null,
       enlarged_lymph_nodes: labelData.enlarged_lymph_nodes === 'yes' ? true : labelData.enlarged_lymph_nodes === 'no' ? false : null,
-      main_findings: labelData.main_findings ?? null,
+      neurovascular_bundle_involvement: labelData.neurovascular_bundle_involvement === 'yes' ? true : labelData.neurovascular_bundle_involvement === 'no' ? false : null,
+      bladder_neck_involvement: labelData.bladder_neck_involvement === 'yes' ? true : labelData.bladder_neck_involvement === 'no' ? false : null,
+      rectal_wall_involvement: labelData.rectal_wall_involvement === 'yes' ? true : labelData.rectal_wall_involvement === 'no' ? false : null,
       lesions: labelData.lesions.map(lesion => ({
         id: lesion.id,
         pirads: lesion.pirads ?? null,
-        volume: lesion.volume ?? null,
+        maximum_diameter: lesion.maximum_diameter ?? null,
         sectors: lesion.sectors.map(sector => {
           const sectorObj: any = {
             region: sector.region || null,

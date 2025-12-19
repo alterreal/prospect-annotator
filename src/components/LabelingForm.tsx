@@ -13,7 +13,10 @@ const LabelingForm: React.FC<LabelingFormProps> = ({ labelData, setLabelData }) 
     setLabelData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleBinaryChange = (field: 'epe' | 'svi' | 'enlarged_lymph_nodes', value: 'yes' | 'no' | '') => {
+  const handleBinaryChange = (
+    field: 'epe' | 'svi' | 'enlarged_lymph_nodes' | 'neurovascular_bundle_involvement' | 'bladder_neck_involvement' | 'rectal_wall_involvement',
+    value: 'yes' | 'no' | ''
+  ) => {
     updateField(field, value);
   };
 
@@ -72,7 +75,7 @@ const LabelingForm: React.FC<LabelingFormProps> = ({ labelData, setLabelData }) 
                 className={labelData.epe === '' || labelData.epe === undefined ? 'active' : ''}
                 onClick={() => handleBinaryChange('epe', '')}
               >
-                Clear
+                N/A
               </button>
             </div>
           </div>
@@ -96,7 +99,7 @@ const LabelingForm: React.FC<LabelingFormProps> = ({ labelData, setLabelData }) 
                 className={labelData.svi === '' || labelData.svi === undefined ? 'active' : ''}
                 onClick={() => handleBinaryChange('svi', '')}
               >
-                Clear
+                N/A
               </button>
             </div>
           </div>
@@ -120,19 +123,81 @@ const LabelingForm: React.FC<LabelingFormProps> = ({ labelData, setLabelData }) 
                 className={labelData.enlarged_lymph_nodes === '' || labelData.enlarged_lymph_nodes === undefined ? 'active' : ''}
                 onClick={() => handleBinaryChange('enlarged_lymph_nodes', '')}
               >
-                Clear
+                N/A
               </button>
             </div>
           </div>
 
           <div className="form-group">
-            <label>Main Findings</label>
-            <textarea
-              value={labelData.main_findings ?? ''}
-              onChange={(e) => updateField('main_findings', e.target.value)}
-              placeholder="Enter main findings..."
-              rows={4}
-            />
+            <label>Neurovascular Bundle Involvement</label>
+            <div className="binary-buttons">
+              <button
+                className={labelData.neurovascular_bundle_involvement === 'yes' ? 'active' : ''}
+                onClick={() => handleBinaryChange('neurovascular_bundle_involvement', 'yes')}
+              >
+                Yes
+              </button>
+              <button
+                className={labelData.neurovascular_bundle_involvement === 'no' ? 'active' : ''}
+                onClick={() => handleBinaryChange('neurovascular_bundle_involvement', 'no')}
+              >
+                No
+              </button>
+              <button
+                className={labelData.neurovascular_bundle_involvement === '' || labelData.neurovascular_bundle_involvement === undefined ? 'active' : ''}
+                onClick={() => handleBinaryChange('neurovascular_bundle_involvement', '')}
+              >
+                N/A
+              </button>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>Bladder Neck Involvement</label>
+            <div className="binary-buttons">
+              <button
+                className={labelData.bladder_neck_involvement === 'yes' ? 'active' : ''}
+                onClick={() => handleBinaryChange('bladder_neck_involvement', 'yes')}
+              >
+                Yes
+              </button>
+              <button
+                className={labelData.bladder_neck_involvement === 'no' ? 'active' : ''}
+                onClick={() => handleBinaryChange('bladder_neck_involvement', 'no')}
+              >
+                No
+              </button>
+              <button
+                className={labelData.bladder_neck_involvement === '' || labelData.bladder_neck_involvement === undefined ? 'active' : ''}
+                onClick={() => handleBinaryChange('bladder_neck_involvement', '')}
+              >
+                N/A
+              </button>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label>Rectal Wall Involvement</label>
+            <div className="binary-buttons">
+              <button
+                className={labelData.rectal_wall_involvement === 'yes' ? 'active' : ''}
+                onClick={() => handleBinaryChange('rectal_wall_involvement', 'yes')}
+              >
+                Yes
+              </button>
+              <button
+                className={labelData.rectal_wall_involvement === 'no' ? 'active' : ''}
+                onClick={() => handleBinaryChange('rectal_wall_involvement', 'no')}
+              >
+                No
+              </button>
+              <button
+                className={labelData.rectal_wall_involvement === '' || labelData.rectal_wall_involvement === undefined ? 'active' : ''}
+                onClick={() => handleBinaryChange('rectal_wall_involvement', '')}
+              >
+                N/A
+              </button>
+            </div>
           </div>
         </div>
 

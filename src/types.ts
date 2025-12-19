@@ -15,7 +15,7 @@ export interface Sector {
 export interface Lesion {
   id: number;
   pirads?: number;
-  volume?: number;
+  maximum_diameter?: number;
   sectors: Sector[];
 }
 
@@ -23,9 +23,11 @@ export interface LabelData {
   epe?: BinaryChoice;
   svi?: BinaryChoice;
   enlarged_lymph_nodes?: BinaryChoice;
+  neurovascular_bundle_involvement?: BinaryChoice;
+  bladder_neck_involvement?: BinaryChoice;
+  rectal_wall_involvement?: BinaryChoice;
   prostate_volume?: number;
   psa?: number;
-  main_findings?: string;
   lesions: Lesion[];
 }
 

@@ -18,7 +18,7 @@ const LesionManager: React.FC<LesionManagerProps> = ({ labelData, setLabelData }
     const newLesion: Lesion = {
       id: newId,
       pirads: undefined,
-      volume: undefined,
+      maximum_diameter: undefined,
       sectors: []
     };
     setLabelData(prev => ({
@@ -99,16 +99,16 @@ const LesionManager: React.FC<LesionManagerProps> = ({ labelData, setLabelData }
                   </select>
                 </div>
                 <div className="lesion-field">
-                  <label>Volume (cc)</label>
+                  <label>Maximum Diameter (mm)</label>
                   <input
                     type="number"
                     step="0.1"
-                    value={lesion.volume ?? ''}
+                    value={lesion.maximum_diameter ?? ''}
                     onChange={(e) => updateLesion(lesion.id, {
-                      volume: e.target.value === '' ? undefined : parseFloat(e.target.value)
+                      maximum_diameter: e.target.value === '' ? undefined : parseFloat(e.target.value)
                     })}
                     onClick={(e) => e.stopPropagation()}
-                    placeholder="Enter volume"
+                    placeholder="Enter maximum diameter"
                   />
                 </div>
               </div>
